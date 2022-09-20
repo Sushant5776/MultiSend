@@ -1,84 +1,60 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import Header from "@/components/Header"
+import type { NextPage } from "next"
+import Head from "next/head"
+import Image from "next/image"
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Multi-Send</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* Header */}
+      <Header btnName="Let's Connect" />
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      {/* MainContent */}
+      <section className="flex">
+        <div className="relative w-[408px] h-[368px] top-[216px] left-[232px]">
+          <Image layout="fill" src="/homeImage.png" alt="homeImage" />
         </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
+        <div className="relative top-[155px] right-[132px] left-[772px] text-rare">
+          <h1 className="text-[32px] italic font-semibold text-center">
+            Hassel <span className="underline text-secondary">Free</span>{" "}
+            Payments <span className="text-secondary">!</span>
+          </h1>
+          <div className="mt-6 leading-[24px] text-justify space-y-8 w-[375px] h-[360px] break-words text-base text-rare/95">
+            <p>
+              <span className="font-medium">Whether</span> you have to track
+              your payments or send one, We have all that you need!
+            </p>
+            <p>
+              Let's have a{" "}
+              <span className="text-secondary font-medium">safer</span>,
+              <span className="text-secondary font-medium">reliable</span> and{" "}
+              <span className="text-secondary font-medium">easy to use</span>{" "}
+              way of broadcasting payments at just click of a button.
+            </p>
+            <p>
+              With not jst being one amongst other payment systems on the web,
+              MultiSend comes with the additional benefits of{" "}
+              <span className="font-medium text-secondary">
+                Ethereum Blockchain
+              </span>
+              .
+            </p>
+            <p>
+              MultiSend is a completely transparent and{" "}
+              <span className="text-secondary font-medium">decentralized</span>{" "}
+              payment system built using the power of{" "}
+              <span className="text-secondary font-medium">
+                Smart Contracts
+              </span>
+              !
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
