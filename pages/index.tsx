@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="h-screen w-full">
       <Head>
         <title>Multi-Send</title>
         <link rel="icon" href="/favicon.ico" />
@@ -14,16 +14,21 @@ const Home: NextPage = () => {
       <Header btnName="Let's Connect" />
 
       {/* MainContent */}
-      <section className="flex">
-        <div className="relative w-[408px] h-[368px] top-[216px] left-[232px]">
-          <Image layout="fill" src="/homeImage.png" alt="homeImage" />
+      <section className="flex justify-center">
+        <div className="relative w-[31.875vw] top-[21.53vh] mr-[10.32vw]">
+          <Image
+            layout="fill"
+            src="/homeImage.png"
+            alt="homeImage"
+            className="object-contain"
+          />
         </div>
-        <div className="relative top-[155px] right-[132px] left-[772px] text-rare">
-          <h1 className="text-[32px] italic font-semibold text-center">
+        <div className="relative top-[21.53vh] text-rare">
+          <h1 className="text-[32px] italic font-semibold mb-8 text-center">
             Hassel <span className="underline text-secondary">Free</span>{" "}
-            Payments <span className="text-secondary">!</span>
+            Payments<span className="text-secondary">!</span>
           </h1>
-          <div className="mt-6 leading-[24px] text-justify space-y-8 w-[375px] h-[360px] break-words text-base text-rare/95">
+          <div className="leading-6 text-justify space-y-8 w-[29.3vw] max-w-[375px] max-h-[50vh] h-fit break-words text-base text-rare/95">
             <p>
               <span className="font-medium">Whether</span> you have to track
               your payments or send one, We have all that you need!
@@ -36,7 +41,7 @@ const Home: NextPage = () => {
               way of broadcasting payments at just click of a button.
             </p>
             <p>
-              With not jst being one amongst other payment systems on the web,
+              With not just being one amongst other payment systems on the web,
               MultiSend comes with the additional benefits of{" "}
               <span className="font-medium text-secondary">
                 Ethereum Blockchain
