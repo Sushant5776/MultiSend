@@ -11,6 +11,7 @@ import {
 	setUnAuth,
 } from '@/store/dashboardState'
 import detectEthereumProvider from '@metamask/detect-provider'
+import Dashboard from '@/components/Dashboard'
 
 const dashboard = () => {
 	const [metamask, setMetamask] = useState<null | any>(null)
@@ -101,9 +102,9 @@ const dashboard = () => {
 			) : status === 'differentChain' ? (
 				<SwitchNetwork metamask={metamask} />
 			) : status === 'dashboard' ? (
-				// <Dashboard />
-				<div>You are on dashboard {metamask?.selectedAddress}</div>
+				<Dashboard currentUser={metamask?.selectedAddress} />
 			) : (
+				// <div>You are on dashboard {metamask?.selectedAddress}</div>
 				<div>No metamask installed</div>
 			)}
 		</>
