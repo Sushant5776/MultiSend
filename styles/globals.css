@@ -4,6 +4,6 @@
 
 @layer components {
 	.glow {
-		@apply absolute -z-10 bg-secondary/[0.08] rounded-full blur-[128px];
+		@apply absolute -z-10 bg-secondary/[0.05] rounded-full blur-[128px];
 	}
 }

@@ -26,7 +26,7 @@ const SwitchNetwork = ({ metamask }: SwitchNetworkProps) => {
 			<Header btnName='Go Home' />
 			<div
 				data-id='glow-center'
-				className='glow bottom-0 left-[25vh] w-[71.11vh] h-[71.11vh]'
+				className='glow bottom-[6.11vh] left-[25vh] w-[71.11vh] h-[71.11vh]'
 			/>
 
 			<main className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center'>
