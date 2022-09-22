@@ -7,15 +7,18 @@ interface IGuestProps {
 
 const Guest = ({ metamask }: IGuestProps) => {
 	const connectWallet = async () => {
-		const connectedUser: string[] = await metamask.request({
+		await metamask.request({
 			method: 'eth_requestAccounts',
 		})
-		// console.log(connectedUser)
 	}
 
 	return (
 		<>
 			<Header btnName='Go Home' />
+			<div
+				data-id='glow-center'
+				className='glow bottom-0 left-[25vh] w-[71.11vh] h-[71.11vh]'
+			/>
 			<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
 				<h1 className='font-semibold text-[32px] text-center italic mb-[4.44vh] text-rare'>
 					You aren't <span className='text-secondary underline'>Connected</span>

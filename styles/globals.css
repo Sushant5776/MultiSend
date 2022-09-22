@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.glow {
+		@apply absolute -z-10 bg-secondary/[0.08] rounded-full blur-[128px];
+	}
+}

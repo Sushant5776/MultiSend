@@ -7,19 +7,18 @@ import { RootDispatch, RootState } from '@/store/index'
 import {
 	setDashboard,
 	setDifferentChain,
+	setNoMetamask,
 	setUnAuth,
 } from '@/store/dashboardState'
 import detectEthereumProvider from '@metamask/detect-provider'
-import { setUser } from '@/store/UserState'
 
 const dashboard = () => {
 	const [metamask, setMetamask] = useState<null | any>(null)
-	const { status, user } = useSelector<
+	const { status } = useSelector<
 		RootState,
-		{ status: 'unAuth' | 'differentChain' | 'dashboard'; user: string }
+		{ status: 'unAuth' | 'differentChain' | 'dashboard' | 'noMetamask' }
 	>((state) => ({
 		status: state.dashboard.status,
-		user: state.user,
 	}))
 	const dispatch: RootDispatch = useDispatch()
 
@@ -30,16 +29,13 @@ const dashboard = () => {
 			return provider
 		}
 
-		console.log('hello')
-
 		detectProvider()
-			.then(async (provider) => {
+			.then((provider) => {
 				if (provider) setMetamask(provider)
-				console.log(provider)
 			})
 			.catch((error) => {
 				console.log(error)
-				dispatch(setUnAuth())
+				dispatch(setNoMetamask())
 			})
 	}, [])
 
@@ -48,7 +44,6 @@ const dashboard = () => {
 			if (!accounts.length) {
 				dispatch(setUnAuth())
 			} else {
-				// dispatch(setUser(accounts[0]))
 				if (metamask.chainId === '0x5') {
 					dispatch(setDashboard())
 				} else {
@@ -58,19 +53,18 @@ const dashboard = () => {
 		}
 
 		const chainChangedHandler = (chainId: string) => {
-			if (chainId !== '0x5') dispatch(setDifferentChain())
-			else {
-				if (metamask.selectedAddress) {
-					// dispatch(setUser(metamask.selectedAddress))
-					dispatch(setDashboard())
-				} else dispatch(setUnAuth())
+			if (metamask.selectedAddress) {
+				if (chainId !== '0x5') dispatch(setDifferentChain())
+				else dispatch(setDashboard())
+			} else {
+				dispatch(setUnAuth())
 			}
 		}
 
 		if (metamask) {
 			metamask.on('accountsChanged', accountsChangedHandler)
 			metamask.on('chainChanged', chainChangedHandler)
-		}
+		} else dispatch(setNoMetamask())
 
 		return () => {
 			metamask?.removeListener('accountsChanged', accountsChangedHandler)
@@ -84,11 +78,10 @@ const dashboard = () => {
 			if (metamask.selectedAddress) {
 				if (metamask.chainId !== '0x5') dispatch(setDifferentChain())
 				else {
-					// dispatch(setUser(metamask.selectedAddress))
 					dispatch(setDashboard())
 				}
 			} else dispatch(setUnAuth())
-		}
+		} else dispatch(setNoMetamask())
 	}, [metamask])
 
 	return (
@@ -106,10 +99,12 @@ const dashboard = () => {
 			{status === 'unAuth' ? (
 				<Guest metamask={metamask} />
 			) : status === 'differentChain' ? (
-				<SwitchNetwork />
-			) : (
+				<SwitchNetwork metamask={metamask} />
+			) : status === 'dashboard' ? (
 				// <Dashboard />
 				<div>You are on dashboard {metamask?.selectedAddress}</div>
+			) : (
+				<div>No metamask installed</div>
 			)}
 		</>
 	)
