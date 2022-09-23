@@ -22,14 +22,13 @@ const SwitchNetwork = ({ metamask }: SwitchNetworkProps) => {
 	}
 
 	return (
-		<>
-			<Header btnName='Go Home' />
+		<main>
+			<Header btnName='Go Home' walletAddress={null} />
 			<div
 				data-id='glow-center'
 				className='glow bottom-[6.11vh] left-[25vh] w-[71.11vh] h-[71.11vh]'
 			/>
-
-			<main className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center'>
+			<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center'>
 				<div className='relative h-[35.56vh] mb-[4.44vh]'>
 					<Image
 						layout='fill'
@@ -52,8 +51,8 @@ const SwitchNetwork = ({ metamask }: SwitchNetworkProps) => {
 					className='bg-secondary font-medium text-base rounded-md px-4 py-[12px] block mx-auto text-primary hover:bg-rare hover:scale-105 transition'>
 					Switch Network
 				</button>
-			</main>
-		</>
+			</div>
+		</main>
 	)
 }
 
