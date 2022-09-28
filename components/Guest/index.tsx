@@ -13,8 +13,8 @@ const Guest = ({ metamask }: IGuestProps) => {
 	}
 
 	return (
-		<main>
-			<Header btnName='Go Home' walletAddress={null} />
+		<>
+			<Header btnName='Go Home' />
 			<div
 				data-id='glow-center'
 				className='glow bottom-0 left-[25vh] w-[71.11vh] h-[71.11vh]'
@@ -38,7 +38,7 @@ const Guest = ({ metamask }: IGuestProps) => {
 					Let's Get In
 				</button>
 			</div>
-		</main>
+		</>
 	)
 }
 
