@@ -4,7 +4,7 @@ interface DashboardProps {
 	currentUser: string | null
 }
 
-const Dashboard = ({ currentUser }: DashboardProps) => {
+const UserData = ({ currentUser }: DashboardProps) => {
 	return (
 		<main>
 			<Header btnName='Go Home' walletAddress={currentUser} />
@@ -13,4 +13,4 @@ const Dashboard = ({ currentUser }: DashboardProps) => {
 	)
 }
 
-export default Dashboard
+export default UserData
