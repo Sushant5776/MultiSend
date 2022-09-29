@@ -16,10 +16,7 @@ import NoMetamask from '@/components/NoMetamask'
 
 const dashboard = () => {
 	const [metamask, setMetamask] = useState<null | any>(null)
-	const { status } = useSelector<
-		RootState,
-		{ status: 'unAuth' | 'differentChain' | 'dashboard' | 'noMetamask' }
-	>((state) => ({
+	const { status } = useSelector((state: RootState) => ({
 		status: state.dashboard.status,
 	}))
 	const dispatch: RootDispatch = useDispatch()
@@ -87,7 +84,7 @@ const dashboard = () => {
 	}, [metamask])
 
 	return (
-		<>
+		<div>
 			<Head>
 				<title>
 					{status === 'unAuth'
@@ -103,12 +100,11 @@ const dashboard = () => {
 			) : status === 'differentChain' ? (
 				<SwitchNetwork metamask={metamask} />
 			) : status === 'dashboard' ? (
-				<UserData currentUser={metamask?.selectedAddress} />
+				<UserData metamask={metamask} />
 			) : (
-				// <div>You are on dashboard {metamask?.selectedAddress}</div>
 				<NoMetamask />
 			)}
-		</>
+		</div>
 	)
 }
 
