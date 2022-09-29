@@ -8,6 +8,15 @@ interface DashboardProps {
   metamask: any
 }
 
+<<<<<<< HEAD:components/UserData/index.tsx
+const UserData = ({ currentUser }: DashboardProps) => {
+	return (
+		<main>
+			<Header btnName='Go Home' walletAddress={currentUser} />
+			{/* <h1>{currentUser ?? ''}</h1> */}
+		</main>
+	)
+=======
 const Dashboard = ({ currentUser, metamask }: DashboardProps) => {
   // useEffect(() => {
   //   async function getContract() {
@@ -28,6 +37,7 @@ const Dashboard = ({ currentUser, metamask }: DashboardProps) => {
       {/* <h1>{currentUser ?? ''}</h1> */}
     </main>
   )
+>>>>>>> afa9759a51e979e382b54ee7fbae580cb8d203ef:components/Dashboard/index.tsx
 }
 
-export default Dashboard
+export default UserData
