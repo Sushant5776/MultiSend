@@ -23,7 +23,7 @@ const SwitchNetwork = ({ metamask }: SwitchNetworkProps) => {
 
 	return (
 		<>
-			<Header btnName='Go Home' />
+			<Header btnName='Go Home' walletAddress={metamask.selectedAddress} />
 			<div
 				data-id='glow-center'
 				className='glow bottom-[6.11vh] left-[25vh] w-[71.11vh] h-[71.11vh]'
