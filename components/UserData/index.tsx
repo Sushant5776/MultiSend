@@ -38,9 +38,10 @@ const UserData = ({ metamask }: DashboardProps) => {
 		if (metamask) {
 			setIsLoading(true)
 			getContract()
-			// setIsLoading(false)
+			setIsLoading(false)
 		}
 	}, [metamask])
+
 	return (
 		<main className='w-full min-h-screen'>
 			<Header btnName='Go Home' walletAddress={metamask?.selectedAddress} />
