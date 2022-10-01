@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { utils, Contract, providers, BigNumber, ContractFactory } from 'ethers'
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from 'utils/contractConfig'
 import ContractInterface from '@/components/ContractInterface'
-import NotOwner from '../NotOwner'
+import NotOwner from '@/components/NotOwner'
 
 interface DashboardProps {
 	// currentUser: string | null
@@ -20,6 +20,7 @@ const UserData = ({ metamask }: DashboardProps) => {
 
 	useEffect(() => {
 		async function getContract() {
+			setIsLoading(true)
 			const web3Provider = new providers.Web3Provider(metamask, 'any')
 			const signer = web3Provider.getSigner()
 
@@ -34,12 +35,11 @@ const UserData = ({ metamask }: DashboardProps) => {
 			setOwner(owner)
 			setBalance(utils.formatEther(balance))
 			setMultiSendContract(MultiSendContract)
+			setIsLoading(false)
 		}
 
 		if (metamask) {
-			setIsLoading(true)
 			getContract()
-			setIsLoading(false)
 		}
 	}, [metamask])
 
