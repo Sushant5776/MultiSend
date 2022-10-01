@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { utils, Contract, providers, BigNumber, ContractFactory } from 'ethers'
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from 'utils/contractConfig'
 import ContractInterface from '@/components/ContractInterface'
+import NotOwner from '../NotOwner'
 
 interface DashboardProps {
 	// currentUser: string | null
@@ -56,7 +57,7 @@ const UserData = ({ metamask }: DashboardProps) => {
 			) : owner.toLowerCase() === metamask?.selectedAddress?.toLowerCase() ? (
 				<ContractInterface contract={multiSendContract} balance={balance} />
 			) : (
-				<h1>You are not owner</h1>
+				<NotOwner />
 			)}
 		</main>
 	)
