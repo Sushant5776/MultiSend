@@ -1,12 +1,11 @@
 import Header from '@/components/Header'
 import { useEffect, useState } from 'react'
-import { utils, Contract, providers, BigNumber, ContractFactory } from 'ethers'
+import { utils, Contract, providers, BigNumber } from 'ethers'
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from 'utils/contractConfig'
 import ContractInterface from '@/components/ContractInterface'
 import NotOwner from '@/components/NotOwner'
 
 interface DashboardProps {
-	// currentUser: string | null
 	metamask: any
 }
 
