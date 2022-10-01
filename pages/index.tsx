@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			{/* Header */}
-			<Header btnName="Let's Connect" />
+			<Header btnName="Let's Connect" walletAddress={null} />
 
 			{/* MainContent */}
 			<section className='flex justify-center h-max top-[21.53vh] relative'>

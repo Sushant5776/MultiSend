@@ -1,5 +1,5 @@
 import { Contract, utils } from 'ethers'
-import { ChangeEvent, KeyboardEvent, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 interface IContractInterfaceProps {
 	balance: string
