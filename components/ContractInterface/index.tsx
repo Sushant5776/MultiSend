@@ -34,9 +34,9 @@ const ContractInterface = ({ balance, contract }: IContractInterfaceProps) => {
 	return (
 		<div>
 			<form className='lg:w-1/4 w-1/2 space-y-5 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
-				<p className='mb-16 text-rare/75 text-center text-lg font-medium'>
+				<p className='mb-16 text-rare text-center text-xl font-medium'>
 					MultiSend Balance:{' '}
-					<span className='text-secondary/80'>{balance}</span> ETH
+					<span className='text-secondary italic'>{balance}</span> ETH
 				</p>
 
 				<div className='space-y-3'>

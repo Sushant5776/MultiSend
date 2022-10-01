@@ -14,9 +14,9 @@ module.exports = {
         rare: "#272331",
       },
       fontFamily: {
-        poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
+        poppins: [ "Poppins", ...defaultTheme.fontFamily.sans ],
       },
     },
   },
-  plugins: [],
+  plugins: [ require('tw-elements/dist/plugin') ],
 }

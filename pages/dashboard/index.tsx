@@ -75,6 +75,7 @@ const dashboard = () => {
 	useEffect(() => {
 		if (metamask) {
 			if (metamask.selectedAddress) {
+				console.log(metamask.selectedAddress)
 				if (metamask.chainId !== '0x5') dispatch(setDifferentChain())
 				else {
 					dispatch(setDashboard())
