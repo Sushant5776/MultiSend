@@ -24,12 +24,12 @@ const Home: NextPage = () => {
 						className='object-contain'
 					/>
 				</div>
-				<div className='relative text-rare'>
+				<div className='relative text-rare dark:text-primary'>
 					<h1 className='text-[32px] italic font-semibold mb-8 text-center'>
 						Hassel <span className='underline text-secondary'>Free</span>{' '}
 						Payments<span className='text-secondary'>!</span>
 					</h1>
-					<div className='leading-6 text-justify space-y-8 w-[29.3vw] max-w-[384px] max-h-[50vh] h-fit break-words text-base text-rare/95'>
+					<div className='leading-6 text-justify space-y-8 w-[29.3vw] max-w-[384px] max-h-[50vh] h-fit break-words text-base text-rare/95 dark:text-primary/95'>
 						<p>
 							<span className='font-medium'>Whether</span> you have to track
 							your payments or send one, We have all that you need!
