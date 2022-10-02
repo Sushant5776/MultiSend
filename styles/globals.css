@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-  .glow {
-    @apply absolute -z-10 bg-secondary/[0.05] rounded-full blur-[128px];
-  }
+	.glow {
+		@apply absolute -z-10 bg-secondary/[0.05] rounded-full blur-[128px];
+	}
 }
 
 #nprogress .bar {
-  background-color: #6366f1 !important;
+	background-color: #6366f1 !important;
 }

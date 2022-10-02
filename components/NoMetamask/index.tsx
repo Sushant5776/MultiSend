@@ -12,11 +12,11 @@ const NoMetamask = () => {
 						className='object-contain'
 					/>
 				</div>
-				<h1 className='text-rare italic font-semibold text-[32px] mb-[2.22vh]'>
+				<h1 className='text-rare dark:text-primary italic font-semibold text-[32px] mb-[2.22vh]'>
 					Oops, Looks Like You don't Have{' '}
 					<span className='text-secondary underline'>Metamask</span>!
 				</h1>
-				<p className='text-rare/75 text-sm font-medium mb-[4.44vh]'>
+				<p className='text-rare/75 dark:text-primary/75 text-sm font-medium mb-[4.44vh]'>
 					Currently We Only Support{' '}
 					<span className='italic text-rare font-semibold'>metamask</span>{' '}
 					wallet

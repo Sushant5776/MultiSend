@@ -22,8 +22,8 @@ const SwitchNetwork = ({ metamask }: SwitchNetworkProps) => {
 	}
 
 	return (
-		<>
-			<Header btnName='Go Home' walletAddress={metamask.selectedAddress} />
+		<div>
+			<Header btnName='Go Home' walletAddress={metamask?.selectedAddress} />
 			<div
 				data-id='glow-center'
 				className='glow bottom-[6.11vh] left-[25vh] w-[71.11vh] h-[71.11vh]'
@@ -38,22 +38,22 @@ const SwitchNetwork = ({ metamask }: SwitchNetworkProps) => {
 						className='object-contain'
 					/>
 				</div>
-				<h1 className='text-rare italic font-semibold text-[32px] mb-[2.22vh]'>
+				<h1 className='text-rare dark:text-primary italic font-semibold text-[32px] mb-[2.22vh]'>
 					Switch Your Network to{' '}
 					<span className='text-secondary underline'>Goerli</span>!
 				</h1>
-				<p className='text-rare/75 text-sm font-medium mb-[4.44vh]'>
+				<p className='text-rare/75 dark:text-primary/75 text-sm font-medium mb-[4.44vh]'>
 					Currently We Only Support{' '}
-					<span className='italic text-rare font-semibold'>Goerli</span> Network
+					<span className='italic font-semibold'>Goerli</span> Network
 					(Main/Test)
 				</p>
 				<button
 					onClick={() => handleSwitchNetwork()}
-					className='bg-secondary font-medium text-base rounded-md px-4 py-[12px] block mx-auto text-primary hover:bg-rare hover:scale-105 transition'>
+					className='bg-secondary font-medium text-base rounded-md px-4 py-[12px] block mx-auto text-primary hover:bg-rare dark:hover:bg-gray-700 hover:scale-105 transition'>
 					Switch Network
 				</button>
 			</main>
-		</>
+		</div>
 	)
 }
 

@@ -34,7 +34,7 @@ const ContractInterface = ({ balance, contract }: IContractInterfaceProps) => {
 	return (
 		<div>
 			<form className='lg:w-1/4 w-1/2 space-y-5 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
-				<p className='mb-16 text-rare text-center text-xl font-medium'>
+				<p className='mb-16 text-rare dark:text-white text-center text-xl font-medium'>
 					MultiSend Balance:{' '}
 					<span className='text-secondary italic'>{balance}</span> ETH
 				</p>
@@ -42,7 +42,7 @@ const ContractInterface = ({ balance, contract }: IContractInterfaceProps) => {
 				<div className='space-y-3'>
 					<label
 						htmlFor='amount'
-						className='block text-rare/60 ml-1 font-medium'>
+						className='block text-rare/60 dark:text-primary/60 ml-1 font-medium'>
 						Amount To Pay
 					</label>
 
@@ -53,20 +53,20 @@ const ContractInterface = ({ balance, contract }: IContractInterfaceProps) => {
 						value={amountToSend}
 						onChange={(event) => setAmountToSend(event.target.value)}
 						placeholder='Enter Numeric Value in ETH currency (1 means 1 ETH)'
-						className='block transition w-full outline-none rounded-lg py-2 px-4 text-rare/60 font-medium ring-2 ring-rare/10 focus:ring-rare/30'
+						className='block transition w-full outline-none rounded-lg py-2 px-4 dark:bg-slate-800 text-rare/60 dark:text-primary/60 font-medium ring-2 dark:ring-white/10 dark:focus:ring-white/25 ring-rare/10 focus:ring-rare/30'
 					/>
 				</div>
 
 				<div className='space-y-3'>
 					<label
 						htmlFor='textarea'
-						className='block text-rare/60 ml-1 font-medium'>
+						className='block text-rare/60 dark:text-primary/60 ml-1 font-medium'>
 						Addresses to Pay
 					</label>
 
 					<textarea
 						id='textarea'
-						className='block transition resize-none w-full outline-none rounded-lg py-2 px-4 text-rare/60 font-medium ring-2 ring-rare/10 focus:ring-rare/30'
+						className='block transition resize-none w-full outline-none rounded-lg py-2 px-4 text-rare/60 dark:text-primary/60 font-medium ring-2 dark:bg-slate-800 ring-rare/10 focus:ring-rare/30 dark:ring-white/10 dark:focus:ring-white/25'
 						rows={6}
 						value={addressesString}
 						placeholder='0x...,etc (Each Address on New Line)'
@@ -77,7 +77,7 @@ const ContractInterface = ({ balance, contract }: IContractInterfaceProps) => {
 				<button
 					disabled={!addressesString || !amountToSend}
 					onClick={(event) => handlePayment(event)}
-					className='w-full active:scale-95 font-medium hover:bg-rare transition py-2 px-4 text-white disabled:bg-rare/30 bg-secondary/100 rounded-lg'>
+					className='w-full active:scale-95 font-medium disabled:scale-100 hover:bg-rare transition py-2 px-4 text-primary dark:disabled:bg-gray-800 bg-secondary/100 rounded-lg'>
 					Pay
 				</button>
 			</form>

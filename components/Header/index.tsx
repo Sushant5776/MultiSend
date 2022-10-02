@@ -16,18 +16,18 @@ const Header = ({ btnName, walletAddress }: Props) => {
 
 			{walletAddress ? (
 				<div className='space-x-8'>
-					<h4 className='inline text-rare/75 font-medium'>
+					<h4 className='inline text-rare/75 dark:text-primary/75 font-medium'>
 						{walletAddress.substring(0, 5)}...{walletAddress.substring(38)}
 					</h4>
 					<Link href={`${btnName === 'Go Home' ? '/' : '/dashboard'}`}>
-						<button className='bg-secondary font-medium text-base rounded-md px-4 py-[12px] text-primary hover:bg-rare hover:scale-105 transition'>
+						<button className='bg-secondary font-medium text-base rounded-md px-4 py-[12px] text-primary hover:bg-rare dark:hover:bg-gray-700 hover:scale-105 transition'>
 							{btnName}
 						</button>
 					</Link>
 				</div>
 			) : (
 				<Link href={`${btnName === 'Go Home' ? '/' : '/dashboard'}`}>
-					<button className='bg-secondary font-medium rounded-md px-4 py-[12px] text-primary hover:bg-rare hover:scale-105 transition'>
+					<button className='bg-secondary font-medium rounded-md px-4 py-[12px] text-primary hover:bg-rare dark:hover:bg-gray-700 hover:scale-105 transition'>
 						{btnName}
 					</button>
 				</Link>
