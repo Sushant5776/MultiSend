@@ -77,7 +77,7 @@ const ContractInterface = ({ balance, contract }: IContractInterfaceProps) => {
 				<button
 					disabled={!addressesString || !amountToSend}
 					onClick={(event) => handlePayment(event)}
-					className='w-full active:scale-95 font-medium disabled:scale-100 hover:bg-rare transition py-2 px-4 text-primary dark:disabled:bg-gray-800 bg-secondary/100 rounded-lg'>
+					className='w-full active:scale-95 font-medium disabled:scale-100 disabled:bg-rare/30 hover:bg-rare transition py-2 px-4 text-primary dark:disabled:bg-gray-800 bg-secondary/100 rounded-lg'>
 					Pay
 				</button>
 			</form>
